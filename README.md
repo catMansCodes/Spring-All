@@ -1,5 +1,5 @@
 # Spring Framwork 
-All about Java spring fremwork &amp; along with demos Project.
+All about Java spring fremwork with demos Project.
 
 <h2>Topics</h2>
 
