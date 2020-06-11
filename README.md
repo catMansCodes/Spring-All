@@ -2,7 +2,7 @@
 All about Java spring fremwork &amp; along with demos Project.
 
 <h2>Topics</h2>
-<hr>
+
 <h4> 1. Spring Core </h4>
 <h4> 2. Spring MVC </h4>
 <h4> 3. Spring Boot </h4>
