@@ -8,4 +8,4 @@ All about Java spring fremwork &amp; along with demos Project.
 <h4> 3. Spring Boot </h4>
 <h4> 4. Spring Data JPA </h4>
 <h4> 5. Spring Rest </h4>
-<h4> 5. Spring Security </h4>
+<h4> 6. Spring Security </h4>
