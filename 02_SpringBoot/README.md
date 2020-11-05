@@ -1,1 +1,1 @@
-Sspring boot Demo projects.
+Spring boot Demo projects.
