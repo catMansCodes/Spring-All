@@ -21,7 +21,7 @@ All about Java spring framework with demo Projects. I hope my work will help you
 
 <h3> 1. Spring Core </h3>
 
-<h4> What is spring contaioner?</h4>
+<h4> What is the spring container?</h4>
 
 Spring container is the core part of the spring framework. The container generally, Create the objects, wired them all together, configure them and manage their life cycle (creation to destroy)
 
@@ -38,5 +38,29 @@ The most common ways to configure spring container are:
 1. Configure Spring beans
 2. Create a Spring container
 3. Retrieve beans from spring containers
+
+<h4> XML based configuration </h4>
+
+Step-01: Configure Spring beans
+
+Create test.xml
+
+```
+<beans>
+	 <bean id="demo" class="org.catmanscode.Test"></bean>
+</beans>
+```
+
+Step-02: Create a Spring container (It is also known as ApplicatonContext)
+
+Spring container/application contet can be create on multiple ways
+
+1. ClassPathXmlApplicationContext
+2. AnnotationConfigApplicationContext
+3. GenericWebApplicationContext
+
+Step-03: Retrieve beans from spring containers
+
+![](SpringBeans.png)
 
 
