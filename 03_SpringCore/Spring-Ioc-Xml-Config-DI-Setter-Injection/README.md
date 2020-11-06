@@ -1,7 +1,7 @@
 
 <h2> Project Structure </h2>
 
-![](DI_Constructor.PNG)
+![](SetterInjection.PNG)
 
 
 <h3> How to run this code in my local system ?</h3> 
