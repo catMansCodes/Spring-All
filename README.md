@@ -1,8 +1,8 @@
-# Spring Framwork
+# Spring Framework
 
-All about Java spring fremwork with demos Project. I hope my work will help you to improve spring concepts , Spring certification exam practice , crack interview and find good job.
+All about Java spring framework with demos Project. I hope my work will help you to improve spring concepts, Spring certification exam practice, crack an interview and find a good job.
 
-<h2>List of Topis : </h2>
+<h2>List of Topics :</h2>
 
 <ol>
   <li> Spring Core </li>
