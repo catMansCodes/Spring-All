@@ -3,10 +3,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="myAnimalService" class="org.catmanscodes.main.dao.AnimalDaoImpl"></bean>
 
-	<bean id="myAnimal" class="org.catmanscodes.main.service.AnimalServiceImpl">
-		<constructor-arg ref="myAnimalService" />
-	</bean>
+	 <bean id="serviceBean" class="org.catmanscode.service.AnimalServiceImpl">
+	 		<property name="animalDao"  ref="daoBean"/>
+	 </bean>
+	
+	 <bean id="daoBean" class="org.catmanscode.dao.AnimalDaoImpl"></bean>
 
 </beans>
