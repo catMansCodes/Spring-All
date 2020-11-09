@@ -169,5 +169,5 @@ animal.animalname = nini
 
 Note: Make sure you are using proper version of XML schema, otherwise it may not work.
 
-[Spring-Ioc-Xml-Config-DI-Setter-Values-Injection : Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Xml-Config-Setter-Values-from-property-file)
+[Spring-Ioc-Xml-Config-Setter-Values-from-property-file : Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Xml-Config-Setter-Values-from-property-file)
 
