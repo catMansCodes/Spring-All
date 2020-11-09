@@ -1,4 +1,8 @@
+
 <h2> Project Structure </h2>
+
+![](SetterInjection.PNG)
+
 
 <h3> How to run this code in my local system ?</h3> 
 
@@ -14,3 +18,4 @@
   <li> Run MyApp.java file </li>
   
 </ol>
+
