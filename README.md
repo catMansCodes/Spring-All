@@ -143,3 +143,31 @@ private String animalName;
 ```
 
 [Spring-Ioc-Xml-Config-DI-Setter-Values-Injection : Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Xml-Config-Setter-Values-Injection)
+
+If we want to get/read data from an external file or say properties file. it is possible in a simple way. We just need to create a new file and Add this file on XML configuration.
+
+1. Create application.properties
+
+```
+animal.animaltype = cat
+animal.animalname = nini
+```
+2. Add file path/class path in xml file and get values.
+
+```
+	<context:property-placeholder location="classpath:application.properties"/>
+
+	<bean id="animalService" class="org.catmanscodes.service.AnimalServiceImpl">
+		<property name="animalDao" ref="animalDao1"></property>
+		
+		<property name="animalName" value="${animal.animalname}" />
+		<property name="animalType" value="${animal.animaltype}" />
+		
+	</bean>
+
+```
+
+Note: Make sure you are using proper version of XML schema, otherwise it may not work.
+
+[Spring-Ioc-Xml-Config-DI-Setter-Values-Injection : Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Xml-Config-Setter-Values-from-property-file)
+
