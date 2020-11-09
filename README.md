@@ -106,9 +106,40 @@ Since you have defined a constructor in class code, compiler didn’t create def
 
 [Spring-Ioc-Xml-Config-DI-Setter-Injection : Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Xml-Config-DI-Setter-Injection)
 
+If you want to get some literal values using setter injection, It is quite simple as setter injection.
+We just need to set values in our xml file.i.e
 
+* Same as above example, Add 2 private parameters/string called animalType and animalName.
 
+```
+private String animalType;
 
+private String animalName;
 
+//generate getters and setter
 
+```
 
+* Now to inject above parameters, Add a property for the same.
+
+```
+<beans>
+	 <bean id="demo" class="fully quolified name of package">
+	 	
+		<property name="animalName" value="nini" />
+		<property name="animalType" value="Cat" />
+	 </bean>
+</beans>
+```
+
+* Next, Get property values on MyApp.Java i.e
+
+```
+	AnimalServiceImpl myAnimalServiceImpl = context.getBean("animalService",AnimalServiceImpl.class);
+		
+	System.out.println(myAnimalServiceImpl.getAnimalType());
+	System.out.println(myAnimalServiceImpl.getAnimalName());
+
+```
+
+[Spring-Ioc-Xml-Config-DI-Setter-Values-Injection : Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Xml-Config-DI-Setter-Injection)
