@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="animalDao1" class="org.catmanscodes.dao.AnimalDaoImpl"></bean>
+
+	<bean id="animalService" class="org.catmanscodes.service.AnimalServiceImpl">
+		<property name="animalDao" ref="animalDao1"></property>
+		
+		<property name="animalName" value="nini" />
+		<property name="animalType" value="Cat" />
+		
+	</bean>
+
+
+</beans>
