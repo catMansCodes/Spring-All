@@ -124,7 +124,7 @@ private String animalName;
 
 ```
 <beans>
-	 <bean id="demo" class="fully quolified name of package">
+	 <bean id="demo" class="fully qualified name of package">
 	 	
 		<property name="animalName" value="nini" />
 		<property name="animalType" value="Cat" />
