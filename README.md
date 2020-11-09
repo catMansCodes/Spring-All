@@ -124,7 +124,7 @@ private String animalName;
 
 ```
 <beans>
-	 <bean id="demo" class="fully quolified name of package">
+	 <bean id="demo" class="fully qualified name of package">
 	 	
 		<property name="animalName" value="nini" />
 		<property name="animalType" value="Cat" />
@@ -142,4 +142,4 @@ private String animalName;
 
 ```
 
-[Spring-Ioc-Xml-Config-DI-Setter-Values-Injection : Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Xml-Config-DI-Setter-Injection)
+[Spring-Ioc-Xml-Config-DI-Setter-Values-Injection : Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Xml-Config-Setter-Values-Injection)
