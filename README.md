@@ -204,3 +204,49 @@ Or define scope manually.
 ![](Scope.png)
 
 [Spring-Ioc-Xml-Config-Bean-Scopes : Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Xml-Config-Bean-Scopes)
+
+<h4> Beans Life Cycle </h4>
+
+![](SprinBeanLifeCycle.png)
+
+<h4>Custom init and destroy method</h4>
+
+- Method signature: Mos of time, It is no-arg, void type public method with init and destroy name. Be can change the name and access modifies, a return type(but nothing will capture) too.
+
+- init(): It is used for initial activities or say start something at application start/load i.e database connection, socket,etc..
+- destroy(): It is used to stop/destroys init activities.
+
+- Code configuration: Add method name in bean(xml file) and create the method on java class. i.e
+
+```
+     <bean 
+	id="myAnimal" 
+	class="org.catmanscodes.main.service.AnimalServiceImpl" 
+	init-method="init"
+	destroy-method="destroy"
+	scope="singleton"
+     />
+```
+```
+	// init method
+	public void init() {
+		System.out.println("Called Init Method");
+		//Code here
+	}
+		
+	// destroy method
+	public void destroy() {
+		System.out.println("Called destroy Method");
+		//Code here
+	}
+
+```
+Note : If we keep bean's scope an prototype, spring will not call destroy method, Developer need to write some configuration code to achieve this. It can be possible using disposablebean interface. Need to implement it in our application and override destroy();
+
+[Spring-Ioc-Xml-Config-Bean-Life-Cycle: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Xml-Config-Bean-Life-Cycle)
+
+
+
+
+
+
