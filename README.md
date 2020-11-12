@@ -290,3 +290,37 @@ public static void main(String[] args) {
 
 [Spring-Ioc-Xml-Java-Annotation-Demo-One: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Xml-Java-Annotation-Demo-One)
 
+<b>Note: </b> Spring can generate bean id itself if we don't provide manually. Name of bean id is same as class name with first lower alphabet / in lower camel case.i.e In the above example 
+
+- In AnimalServiceImple class,  Write @component instead of @component("myAnimal"), now spring will create a bean id called animalServiceImple.
+- Use animalServiceImple bean id in MyApp.java.
+This is work same as ago.
+
+```
+@Component // animalServiceImple--> is bean id which will generate by Spring 
+public class AnimalServiceImpl implements AnimalService {
+
+	@Override
+	public void getAnimal() {
+		System.out.println("Hello Spring Bean Java Annotation example");
+	}
+
+}
+```
+MyApp.java
+```
+
+public static void main(String[] args) {
+
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+	
+		AnimalService animalService = context.getBean("animalServiceImpl", AnimalService.class);
+		
+		animalService.getAnimal();
+		
+		context.close();
+	}
+
+```
+
+[Spring-Ioc-Xml-Java-Annotation-Demo-Two: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Xml-Java-Annotation-Demo-Two)
