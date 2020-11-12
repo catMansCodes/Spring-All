@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+			<!--  Try Below Case one bye one. at a time use one bean.  -->
+
+<!-- 1. by default scope="singleton" -->
+	<bean id="myAnimal" class="org.catmanscodes.main.service.AnimalServiceImpl" />
+
+<!-- 2. Add scope="singleton" -->
+	<!-- <bean id="myAnimal" class="org.catmanscodes.main.service.AnimalServiceImpl" scope="singleton"/> -->
+
+<!-- 3. Next try scope="prototype" -->
+	<!-- <bean id="myAnimal" class="org.catmanscodes.main.service.AnimalServiceImpl" scope="prototype"/> -->
+
+</beans>
