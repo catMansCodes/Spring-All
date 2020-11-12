@@ -143,3 +143,62 @@ private String animalName;
 ```
 
 [Spring-Ioc-Xml-Config-DI-Setter-Values-Injection : Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Xml-Config-Setter-Values-Injection)
+
+If we want to get/read data from an external file or say properties file. it is possible in a simple way. We just need to create a new file and Add this file on XML configuration.
+
+1. Create application.properties
+
+```
+animal.animaltype = cat
+animal.animalname = nini
+```
+2. Add file path/class path in xml file and get values.
+
+```
+	<context:property-placeholder location="classpath:application.properties"/>
+
+	<bean id="animalService" class="org.catmanscodes.service.AnimalServiceImpl">
+		<property name="animalDao" ref="animalDao1"></property>
+		
+		<property name="animalName" value="${animal.animalname}" />
+		<property name="animalType" value="${animal.animaltype}" />
+		
+	</bean>
+
+```
+
+Note: Make sure you are using proper version of XML schema, otherwise it may not work.
+
+[Spring-Ioc-Xml-Config-Setter-Values-from-property-file : Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Xml-Config-Setter-Values-from-property-file)
+
+#Bean Scopes:
+- Scope refers to the life cycle of a bean.
+- It defines how long bean lives, how many instances will create and store in memory, How they shared in the environment.
+
+There is a main 5 type of scope.
+1. Singleton: It is default one If we don't define a scope spring is use it. Only one instance is created and shared in singleton.
+2. Prototype: It creates a new instance for each request.
+3. Request: It is part of HTTP web request and uses in web applications.
+4. Session: It is also part of the HTTP session and uses in web applications only.
+5. Global-session: Same as Session, We can use global session based on the requirement.
+
+# Singleton VS Prototype
+
+```
+<!--by default scope="singleton" -->
+	<bean id="myAnimal" class="org.catmanscodes.main.service.AnimalServiceImpl" />
+
+```
+Or define scope manually.
+```
+<!-- Manually defined scope="singleton" -->
+ <bean id="myAnimal" class="org.catmanscodes.main.service.AnimalServiceImpl" scope="singleton"/>
+
+```
+<!-- scope="prototype" -->
+	 <bean id="myAnimal" class="org.catmanscodes.main.service.AnimalServiceImpl" scope="prototype"/>
+```
+
+![](Scope.png)
+
+[Spring-Ioc-Xml-Config-Bean-Scopes : Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Xml-Config-Setter-Values-from-property-file)
