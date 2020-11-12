@@ -171,7 +171,7 @@ Note: Make sure you are using proper version of XML schema, otherwise it may not
 
 [Spring-Ioc-Xml-Config-Setter-Values-from-property-file : Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Xml-Config-Setter-Values-from-property-file)
 
-#Bean Scopes:
+<h4> Bean Scopes: </h4>
 - Scope refers to the life cycle of a bean.
 - It defines how long bean lives, how many instances will create and store in memory, How they shared in the environment.
 
@@ -182,7 +182,7 @@ There is a main 5 type of scope.
 4. Session: It is also part of the HTTP session and uses in web applications only.
 5. Global-session: Same as Session, We can use global session based on the requirement.
 
-# Singleton VS Prototype
+<h4> Singleton VS Prototype </h4>
 
 ```
 <!--by default scope="singleton" -->
@@ -190,10 +190,12 @@ There is a main 5 type of scope.
 
 ```
 Or define scope manually.
+
 ```
 <!-- Manually defined scope="singleton" -->
  <bean id="myAnimal" class="org.catmanscodes.main.service.AnimalServiceImpl" scope="singleton"/>
 
+```
 ```
 <!-- scope="prototype" -->
 	 <bean id="myAnimal" class="org.catmanscodes.main.service.AnimalServiceImpl" scope="prototype"/>
@@ -201,4 +203,4 @@ Or define scope manually.
 
 ![](Scope.png)
 
-[Spring-Ioc-Xml-Config-Bean-Scopes : Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Xml-Config-Setter-Values-from-property-file)
+[Spring-Ioc-Xml-Config-Bean-Scopes : Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Xml-Config-Bean-Scopes)
