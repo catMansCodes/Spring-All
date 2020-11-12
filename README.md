@@ -246,7 +246,9 @@ Note : If we keep bean's scope an prototype, spring will not call destroy method
 [Spring-Ioc-Xml-Config-Bean-Life-Cycle: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Xml-Config-Bean-Life-Cycle)
 
 <h4> Java Annotation based configuration </h4>
+
 - It is a good idea to use java annotations because in large feature applications may require numbers of beans and it way more complex to create those beans using XML and manage it. So overcome this issue java annotation is used.
+
 - Using annotations, Spring is scanned the code/class and register in spring beans container.
 
 - Code Implement is way simple just 3 small steps.
