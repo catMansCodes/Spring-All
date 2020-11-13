@@ -463,6 +463,7 @@ public class AnimalServiceImpl implements AnimalService {
 [Spring-Ioc-Java-Annotation-Qualifier-Constructor: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Java-Annotation-Qualifier-Constructor)
 
 <h4> Read property file values using annotation </h4>
+
 - To read property values from file,
 
 1. Create a property file i.e application.properties
@@ -525,4 +526,37 @@ public class AnimalServiceImpl implements AnimalService {
 
 [Spring-Ioc-Java-Annotation-Property-File: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Java-Annotation-Property-File)
 
+<h4>@Scope annotation</h4>
+- It is same as ago we learnt scope of the bean. Here we are using @scope to specify bean's scope on java file.
+i.e
+
+```
+@Component
+@Scope("singleton")
+//@Scope("prototype")  // try this too
+public class AnimalServiceImpl implements AnimalService {
+
+	@Override
+	public void getAnimal() {
+		System.out.println("Get animal details");
+	}
+
+}
+```
+
+[Spring-Ico-Java-Annotation-Scope: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ico-Java-Annotation-Scope)
+
+
+<h4>Bean life cycle annotations</h4>
+
+- Everything is the same as ago, just remove XML configuration and add annotations.
+- We know the life cycle of the bean as per earlier XML demos. that time we are using XML properties for DI.
+- There is two main annotations which makes our code configuration easy.
+
+1. @PostConstruct - Use on init() 
+2. @PreDestroy - use on destroy()
+
+[Spring-Ico-Java-Annotation-Bean-Life-cycle: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ico-Java-Annotation-Bean-Life-cycle)
+
+Note: Same as ago, there is no direct way to support destroy()/@PreDestroy for prototype scope. We need to use extra code for providing support same as ago.
 
