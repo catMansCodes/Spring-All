@@ -440,16 +440,88 @@ public class AnimalServiceImpl implements AnimalService {
 
 <h4>Qualifier annotation </h4>
 
-- Qualifier is used to over come ambiguity of dependency injection. While more than one implementation is used for an interface, Compiler is confused which Dependency do I need to inject, that time @Qualifier helps. We can specify bean id using this.
-- We can mention our custom bean id using @component("custom bean id") or spring also generate default one (first lower alphabyte camelcase formate).
+- A qualifier is used to overcome the ambiguity of dependency injection. While more than one implementation is used for an interface, Compiler is confused which Dependency do I need to inject, that time @Qualifier helps. We can specify bean id using this.
+- We can mention our custom bean id using @component("custom bean id") or spring also generate default one (first lower alphabet camelcase formate).
 
 ![](Qualifier_example.png)
 
 [Spring-Ioc-Java-Annotation-Qualifier: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Java-Annotation-Qualifier)
 
+<h4> Qualifier in Constructor Injection </h4>
+- The process is the same as the above example just small change in constructor injection syntax. Pass the annotation inside the constructor. 
+
+```
+	private AnimalDao animalDao;
+
+	@Autowired
+	public AnimalServiceImpl(@Qualifier("catDaoImpl")AnimalDao animalDao) {
+		super();
+		this.animalDao = animalDao;
+	}
+```
 
 [Spring-Ioc-Java-Annotation-Qualifier-Constructor: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Java-Annotation-Qualifier-Constructor)
 
+<h4> Read property file values using annotation </h4>
+- To read property values from file,
+
+1. Create a property file i.e application.properties
+```
+animal.animaltype = cat
+animal.animalname = nini
+
+```
+
+2. Specify file path in xml file
+
+```
+<context:property-placeholder location="classpath:application.properties"/>
+```
+
+3. Use @Value annotation to inject values. i.e @Value("${animal.animaltype}")
+```
+package org.catmanscodes.main.service;
+
+import org.catmanscodes.dao.AnimalDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
+public class AnimalServiceImpl implements AnimalService {
+
+	@Autowired
+	private AnimalDao animalDao;
+
+	@Value("${animal.animaltype}")
+	private String animalType;
+	
+	@Value("${animal.animalname}")
+	private String animalName;
+	
+	public String getAnimalType() {
+		return animalType;
+	}
+
+	public void setAnimalType(String animalType) {
+		this.animalType = animalType;
+	}
+	
+	public String getAnimalName() {
+		return animalName;
+	}
+
+	public void setAnimalName(String animalName) {
+		this.animalName = animalName;
+	}
+	
+	@Override
+	public void getAnimal() {
+		animalDao.getAnimal();
+	}
+}
+
+```
 
 [Spring-Ioc-Java-Annotation-Property-File: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Java-Annotation-Property-File)
 
