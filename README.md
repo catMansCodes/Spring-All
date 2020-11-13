@@ -324,3 +324,121 @@ public static void main(String[] args) {
 ```
 
 [Spring-Ioc-Xml-Java-Annotation-Demo-Two: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Xml-Java-Annotation-Demo-Two)
+
+
+<h4> Spring DI with annotation and autowiring </h4>
+
+- Autowired mean wire the property for bean automatically and make it ready to use. It is background spring process.
+- We just need to use @Autowired annotation with property and spring will automatically inject it.
+- It reduces code configuration.
+
+- We can use @Autowired with multiple cases
+1. Constructor Injection
+2. Setter Injection
+3. Method injection
+4. Field Injection
+
+Note: Make sure we use @component annotation on our all DAO & Service layer.
+
+<h4> 1. Constructor Injection </h4>
+- It is same as above example just create a constructore and add @Auowired on constructore. 
+
+```
+@Component
+public class AnimalServiceImpl implements AnimalService {
+
+	private AnimalDao animalDao;
+
+	@Autowired // just add annotation on constructore.
+	public AnimalServiceImpl(AnimalDao animalDao) {
+		super();
+		this.animalDao = animalDao;
+	}
+
+	@Override
+	public void getAnimal() {
+		animalDao.getAnimal();
+	}
+
+}
+```
+
+[Spring-Ioc-Java-Annotation-Constructor-Injection: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Java-Annotation-Constructor-Injection)
+
+
+<h4> 2. Setter Injection </h4>
+- It is same as above example just create a setter method and add @Auowired on setter method. 
+
+```
+@Component
+public class AnimalServiceImpl implements AnimalService {
+
+	private AnimalDao animalDao;
+
+	@Autowired // just add annotation on setter method.
+	public void setAnimalDao(AnimalDao animalDao) {
+		this.animalDao = animalDao;
+	}
+
+	@Override
+	public void getAnimal() {
+		animalDao.getAnimal();
+	}
+
+}
+```
+
+[Spring-Ioc-Java-Annotation-Setter-Injection: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Java-Annotation-Setter-Injection)
+
+<h4> 3. Method Injection </h4>
+- It is same as above example just create a normal method ore remove setter to anyname and add @Auowired on it. 
+
+```
+@Component
+public class AnimalServiceImpl implements AnimalService {
+
+	private AnimalDao animalDao;
+
+	@Autowired // just add annotation on custom method.
+	public void myCustomMethod(AnimalDao animalDao) {
+		this.animalDao = animalDao;
+	}
+
+	@Override
+	public void getAnimal() {
+		animalDao.getAnimal();
+	}
+
+}
+
+```
+
+[Spring-Ioc-Java-Annotation-Method-Injection: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Java-Annotation-Method-Injection)
+
+
+<h4> 4. Field Injection </h4>
+- It is same as above example just create field and add @Auowired on field. 
+- This is best and way to use annotation. while add @Autowired on field, On background it apply for all case (constructor/setter).
+
+```
+@Component
+public class AnimalServiceImpl implements AnimalService {
+	
+	@Autowired // direct on field so it will inject required depedency automatically on background
+	private AnimalDao animalDao;
+
+	@Override
+	public void getAnimal() {
+		animalDao.getAnimal();
+	}
+
+}
+
+```
+
+
+[Spring-Ioc-Java-Annotation-Field-Injection: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Java-Annotation-Field-Injection)
+
+
+
+
