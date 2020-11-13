@@ -436,9 +436,21 @@ public class AnimalServiceImpl implements AnimalService {
 
 ```
 
-
 [Spring-Ioc-Java-Annotation-Field-Injection: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Java-Annotation-Field-Injection)
 
+<h4>Qualifier annotation </h4>
 
+- Qualifier is used to over come ambiguity of dependency injection. While more than one implementation is used for an interface, Compiler is confused which Dependency do I need to inject, that time @Qualifier helps. We can specify bean id using this.
+- We can mention our custom bean id using @component("custom bean id") or spring also generate default one (first lower alphabyte camelcase formate).
+
+![](Qualifier_example.png)
+
+[Spring-Ioc-Java-Annotation-Qualifier: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Java-Annotation-Qualifier)
+
+
+[Spring-Ioc-Java-Annotation-Qualifier-Constructor: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Java-Annotation-Qualifier-Constructor)
+
+
+[Spring-Ioc-Java-Annotation-Property-File: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-Java-Annotation-Property-File)
 
 
