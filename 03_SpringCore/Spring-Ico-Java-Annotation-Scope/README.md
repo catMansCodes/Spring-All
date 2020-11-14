@@ -1,7 +1,7 @@
 
 <h2> Project Structure </h2>
 
-![](Annotation-Constructor.PNG)
+![](Bean-scope-annotation.PNG)
 
 
 <h3> How to run this code in my local system ?</h3> 
