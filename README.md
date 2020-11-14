@@ -589,6 +589,7 @@ public class AnimalConfig {
 ```
 
 - Here, rest of the code is the same as earlier, we just remove XML file and create a Java Config class.
+
 [Spring-Ioc-NoXml-Java-Annotation-Demo-One: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-NoXml-Java-Annotation-Demo-One)
 
 
