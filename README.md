@@ -560,3 +560,36 @@ public class AnimalServiceImpl implements AnimalService {
 
 Note: Same as ago, there is no direct way to support destroy()/@PreDestroy for prototype scope. We need to use extra code for providing support same as ago.
 
+<h4>Spring Configuration Only Java annotation (without XML)</h4>
+
+- As per earlier examples, there is configuration either only XML or java annotation with XML code.
+- If we want to build a project without XML file, this is the way to do that.
+- We need to creat a Java class file and need some configuration using annotations. i.e
+
+1. Create a Config file i.e AnimalConfig and add @Configuration
+2. Add @componentScane("Package path") with configuration
+
+```
+@Configuration
+@ComponentScan("org.catmanscodes")
+public class AnimalConfig {
+
+}
+```
+
+3. Load config file in MyApp.java class
+```
+	AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AnimalConfig.class);
+```
+
+4. Retrieve bean from spring container.
+
+```
+	AnimalService animalService = context.getBean("animalServiceImpl",AnimalService.class);
+```
+
+- Here, rest of the code is the same as earlier, we just remove XML file and create a Java Config class.
+
+[Spring-Ioc-NoXml-Java-Annotation-Demo-One: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-NoXml-Java-Annotation-Demo-One)
+
+
