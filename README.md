@@ -592,4 +592,46 @@ public class AnimalConfig {
 
 [Spring-Ioc-NoXml-Java-Annotation-Demo-One: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-NoXml-Java-Annotation-Demo-One)
 
+<h4>@Bean Pure Java Configuration </h4>
 
+
+[Spring-Ioc-NoXml-Java-Annotation-Demo-Two: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-NoXml-Java-Annotation-Demo-Two)
+
+<h4>@PropertySource : Read properties file </h4>
+- Using @PropertySource("classpath:file.name") is use to load property file.
+- Development process is same as ago.
+
+1. Create a properties file i.e application.properties
+```
+animal.animaltype = cat
+animal.animalname = nini
+```
+
+2. Load property file on Configuration
+
+```
+@Configuration
+@PropertySource("classpath:application.properties")
+public class AnimalConfig {
+
+	@Bean
+	public AnimalService animalServiceImpl() {
+		return new AnimalServiceImpl();
+	}
+}
+```
+3. Retrieve values using @Value("${x.y}") 
+```
+	@Value("${animal.animaltype}")
+	private String animalType;
+	
+	@Value("${animal.animalname}")
+	private String animalName;
+	
+	//getter & setter
+```
+4. Net step, the rest of all configuration/code is the same.
+
+Note: If we are using spring version 4.2 or below we will require some additional configuration. These steps are working for spring 4.2+ only. 
+
+[Spring-Ioc-NoXml-Java-Annotation-Demo-Three: Demo Project](https://github.com/catMansCodes/Spring-All/tree/master/03_SpringCore/Spring-Ioc-NoXml-Java-Annotation-Demo-Three)
